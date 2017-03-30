@@ -13,5 +13,5 @@ rows = [
 
 for state, messages in groupby(rows, key=itemgetter('state')):
     print '%s的人员如下:'%state
-    for message in messages:
+    for message in sorted(messages, key=itemgetter('age')):
         print '姓名: %s, 年龄: %s'%(message['name'], message['age'])
